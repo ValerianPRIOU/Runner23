@@ -1,24 +1,43 @@
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class StaticThing {
 
-    private double sizeX;
-    private double sizeY;
+    private double positionX;
+    private double positionY;
     private String fileName;
+    private ImageView imageview;
 
-    private Image background = new Image(fileName);
-    private ImageView dispBackground = new ImageView(background);
+    public StaticThing(double positionX, double positionY, String fileName) {
 
-    public StaticThing(double sizeX, double sizeY, String fileName) {
+        this.positionX = positionX;
+        this.positionY = positionY;
 
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
-        this.fileName = fileName;
+        this.imageview = new ImageView(fileName);
+        this.imageview.setX(positionX);
+        this.imageview.setY(positionY);
 
     }
 
-    public ImageView getDispBackground() {
-        return dispBackground;
+    public double getPositionX() {
+        return positionX;
     }
+
+    public double getPositionY() {
+        return positionY;
+    }
+
+    public ImageView getImageview() {
+        return imageview;
+    }
+
+    public void setPositionX(double positionX) {
+        this.positionX = positionX;
+    }
+
+    public void setPositionY(double positionY) {
+        this.positionY = positionY;
+    }
+
+    //On met en place des setters pour les positions de X et Y parce que ce sont des valeurs qu'on va vouloir modifier
+    //par la suite.
 }

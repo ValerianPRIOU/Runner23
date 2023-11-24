@@ -19,18 +19,22 @@ public class Main extends Application {
         //sprite.setY(300);
 
         primaryStage.setTitle("Runner");
-        GameScene gameScene = new GameScene();
         Group root = new Group();
         Pane pane = new Pane(root);
-        Scene theScene = new Scene(pane, 600, 400, true);
-        primaryStage.setScene(theScene);
+        GameScene theScene = new GameScene(pane, 800, 400);
+        //On met ici en place la scène (la fenêtre) dans laquelle se passera l'action.
+        //On a besoin d'un pane, contenu lui-même dans un group car notre GameScene ne peut que s'afficher dans un pane.
 
-        primaryStage.show();
+        pane.getChildren().add(GameScene.getBackgroundLeft().getImageview());
+        pane.getChildren().add(GameScene.getBackgroundRight().getImageview());
+
+        primaryStage.setScene(theScene); //définit la scène que l'on veut voir (donc ici notre GameScene).
+        primaryStage.show(); // Affiche la scène principale.
 
         }
 
 
         public static void main(String[]args){
         launch(args);
-        }
+        } // Ce main est commun pour toutes les applications JFX?
 }
