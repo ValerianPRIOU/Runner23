@@ -8,6 +8,7 @@ public class GameScene extends Scene {
 
     private static StaticThing backgroundLeft;
     private static StaticThing backgroundRight;
+    private int numberOfLives;
 
 
     public GameScene(Parent parent, double x, double y) {
@@ -17,6 +18,8 @@ public class GameScene extends Scene {
         this.backgroundLeft = new StaticThing(0, 0, "img/desert.png");
         this.backgroundRight = new StaticThing(0, 0, "img/desert.png");
         //On crée deux instances du fond. On les déplacera ensuite pour donner l'illusion de mouvement
+
+        numberOfLives = 3;
 
         AnimationTimer rafraichissement = new AnimationTimer() {
             @Override
