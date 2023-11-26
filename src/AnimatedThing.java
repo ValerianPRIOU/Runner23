@@ -80,6 +80,25 @@ public abstract class AnimatedThing {
         this.delaiFrame = delaiFrame;
     }
 
+    public void deplacement(long l) {
+        //(update)
+
+        int index = getIndex();
+
+        if(index == maxIndex) {
+            setIndex(0);
+            //Lorsqu'on arrive à la fin de l'animation on recommence à 0.
+        }
+        else {
+            setIndex(index + 1);
+            //On incrémente l'index pour afficher un sprite différent, 6 au total pour la course.
+        }
+
+        x = getX();
+        sprite.setViewport(new Rectangle2D(getIndex()*85,0,85,100));
+        //getIndexCourse() incrémente de 0 à 5 pour sélectionner les différentes parties de l'image contenant les sprites, ils sont tous séparés par 85 pixels.
+    }
+
 
 
 }
