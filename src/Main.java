@@ -28,12 +28,12 @@ public class Main extends Application {
         pane.getChildren().add(GameScene.getBackgroundLeft().getImageview());
         pane.getChildren().add(GameScene.getBackgroundRight().getImageview());
 
-        pane.getChildren().add(GameScene.getChevalier().getSprite());
+        pane.getChildren().add(theScene.getChevalier().getSprite());
 
         primaryStage.setScene(theScene); //définit la scène que l'on veut voir (donc ici notre GameScene).
         primaryStage.show(); // Affiche la scène principale.
 
-        System.out.println("Viewport: " + chevalier.getSprite().getViewport());
+        //System.out.println("Viewport: " + chevalier.getSprite().getViewport());
 
         }
 
