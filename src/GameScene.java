@@ -9,7 +9,7 @@ public class GameScene extends Scene {
     private static StaticThing backgroundLeft;
     private static StaticThing backgroundRight;
     private int numberOfLives;
-    private Hero chevalier;
+    private static Hero chevalier;
 
 
     public GameScene(Parent parent, double x, double y) {
@@ -28,6 +28,7 @@ public class GameScene extends Scene {
             @Override
             public void handle(long l) {
                 GameScene.defilement(l); //rafraichissement est responsable de la création d'un timer qui va permettre d'animer notre jeux
+                GameScene.getChevalier().deplacement(l);
             }
         };
 
@@ -69,4 +70,7 @@ public class GameScene extends Scene {
 
     }
 
+    public static Hero getChevalier() {
+        return chevalier;
+    }
 }

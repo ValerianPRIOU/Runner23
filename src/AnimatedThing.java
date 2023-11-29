@@ -8,7 +8,7 @@ public abstract class AnimatedThing {
     private ImageView sprite;
     private int attitude;
 
-    private int index;
+    private int index = 0;
     private int maxIndex;
     private int delaiFrame;
 
@@ -64,9 +64,7 @@ public abstract class AnimatedThing {
         this.y = y;
     }
 
-    public void setAttitude(int attitude) {
-        this.attitude = attitude;
-    }
+    public void setAttitude(int attitude) { this.attitude = attitude; }
 
     public void setIndex(int index) {
         this.index = index;
